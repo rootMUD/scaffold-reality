@@ -34,3 +34,17 @@ Processes:
 
     ADlZSbZXyaQgdwZYyAS5KL_VUwf-RkXOg3tlLOBJtY4
 
+  * **YuanSuperisor**
+
+    An agent to give you serendipity, but it need spec skill to find him!
+
+    Y4sU8cGKv3fw4d5AksncLgIFyVm4WLcR3FZWtvzpdBI
+
+* **Achievement**
+
+  To record the players achievement.
+
+  wbIGThLriLEzpuL5yS__aba2jn0YAF471adJTrc0Pdg
+
+  
+

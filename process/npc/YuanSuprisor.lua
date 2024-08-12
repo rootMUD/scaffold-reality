@@ -2,18 +2,16 @@ local json = require("json")
 
 TARGET_WORLD_PID = 'D47JUInbsrPfYp2lSyqXY4YEa5ShZw7TeZrIA-b-_Nc'
 CHAT_TARGET = 'D47JUInbsrPfYp2lSyqXY4YEa5ShZw7TeZrIA-b-_Nc'
-HomePosition = HomePosition or { 22, 3 }
+
+ACHIEVEMENT_TARGET = 'wbIGThLriLEzpuL5yS__aba2jn0YAF471adJTrc0Pdg'
+
+HomePosition = HomePosition or {14, 43}
 Initialized = Initialized or nil
 TIMESTAMP_LAST_MESSAGE_MS = TIMESTAMP_LAST_MESSAGE_MS or 0
 COOLDOWN_MS = 3000
 
-QUOTES = {
-    "DimensionLife if the pet game & AI twin Protocol on AO!",
-    "Launch App: https://home.dimension-life.rootmud.xyz/",
-    "Homepage: https://home.dimension-life.rootmud.xyz/",
-    "Whitepaper: https://bodhi.wtf/space/5/15192/"
-
-}
+QUOTES = {"Lucky Guy! You found me! I will give you a achievement", "You could check all of ur achievement in:",
+          "https://dimension-life.rootmud.xyz/profile"}
 
 function Register()
     print("Registering")
@@ -26,11 +24,11 @@ function Register()
             Type = "Avatar",
             Position = HomePosition,
             Metadata = {
-                DisplayName = "DimensionLife",
+                DisplayName = "YuanSuperisor",
                 Interaction = {
                     Type = "Default"
                 },
-                SkinNumber = 6
+                SkinNumber = 7
             }
         })
     })
@@ -52,24 +50,42 @@ Handlers.add('DefaultInteraction', Handlers.utils.hasMatchingTag('Action', 'Defa
             Target = CHAT_TARGET,
             Tags = {
                 Action = 'ChatMessage',
-                ['Author-Name'] = 'DimensionLife'
+                ['Author-Name'] = 'YuanSuperisor'
             },
             Data = quote
         })
     end
 
+    -- Send({
+    --     Target = ACHIEVEMENT_TARGET,
+    --     Tags = {
+    --       Action = 'GetAllWhitelists',
+    --     },
+    --     Data = '{"cursor": 0}'
+    -- })
+
+    Send({
+        Target = ACHIEVEMENT_TARGET,
+        Tags = {
+            Action = 'AppendAchievement'
+        },
+        Data = json.encode({
+            title = 'findsuperisor',
+            description = 'Yeps! You find Supervisor!',
+            proven = '',
+            address = msg.From
+        })
+    })
+
     TIMESTAMP_LAST_MESSAGE_MS = msg.Timestamp
 end)
 
-Handlers.add(
-  "CronTick",
-  Handlers.utils.hasMatchingTag("Action", "Cron"),
-  function(msg)
+Handlers.add("CronTick", Handlers.utils.hasMatchingTag("Action", "Cron"), function(msg)
     print("CronTick")
     Send({
         Target = TARGET_WORLD_PID,
         Tags = {
-          Action = 'Reality.EntityFix',
-        },
+            Action = 'Reality.EntityFix'
+        }
     })
 end)
