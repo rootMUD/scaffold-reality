@@ -26,7 +26,8 @@ RealityInfo = {
       Tilemap = {
         Type = 'Fixed',
         Format = 'TMJ',
-        TxId = 'kMWW2cxfszlgrawMb3d_2VBtkbw_qBZ8Yw-t9ekbEqQ'
+        -- TxId = '8pEgfhyIgLB2d33hXh9YzcxtNPx807mzhf2_6qFcPjg'
+        TxId = 'zONIRQfsw1561DVZ-cApZ9YFs-0hp4jBi53Y3XsZYXg'
         -- TxId = 'gzh7MgSQnZrYgO4saNdLggS4XxMBcdAtdfGZmLsdUPM', -- TxId of the tilemap in TMJ format
         -- Since we are already setting the spawn in the middle, we don't need this
         -- Offset = { -10, -10 },
@@ -35,9 +36,9 @@ RealityInfo = {
   }
   
   RealityEntitiesStatic = {
-    -- Blue potion: Warp back to Llama land
-    ['9a_YP6M7iN7b6QUoSvpoV3oe3CqxosyuJnraCucy5ss'] = {
-      Position = { 51, 57 },
+    -- Blue potion: Warp back to island
+    ['19z5ky0x_z5tae_nQmvTGLyOelknHb2uFCz2SnJBoek'] = {
+      Position = { 40, 42 },
       Type = 'Hidden', -- 'Warp'/'Avatar' types are understood by `2D-Tile-0` renderer
       Metadata = {
         Interaction = {
